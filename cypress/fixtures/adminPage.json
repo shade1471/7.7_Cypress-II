@@ -1,0 +1,7 @@
+{
+    "email" : "[type=email]",
+    "password": "[type=password]",
+    "logIn": "Авторизоваться",
+    "hallControl": "Управление залами",
+    "header": ".page-header__subtitle"
+}
