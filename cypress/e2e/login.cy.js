@@ -8,16 +8,12 @@ beforeEach(() => {
 
 describe("Login to admin part of service", () => {
   it("Should login how valid user", () => {
-    cy.get(admPage.email).type(user.login);
-    cy.get(admPage.password).type(user.password);
-    cy.contains(admPage.logIn).click();
-    cy.contains(admPage.hallControl).should("be.visible");
+    cy.login(user.login, user.password);
+    cy.get(admPage.hallControl).should("be.visible");
   });
 
   it("Should login how no valid user", () => {
-    cy.get(admPage.email).type(user.badLogin);
-    cy.get(admPage.password).type(user.badPassword);
-    cy.contains(admPage.logIn).click();
+    cy.login(user.badLogin, user.badPassword);
     cy.contains("Ошибка авторизации!").should("be.visible");
   });
 });

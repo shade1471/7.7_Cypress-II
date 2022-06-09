@@ -1,7 +1,8 @@
 {
     "email" : "[type=email]",
     "password": "[type=password]",
-    "logIn": "Авторизоваться",
-    "hallControl": "Управление залами",
+    "logInButton": ".login__button",
+    "hallControl": "#hall-control",
+    "gridSession": "#grid-session",
     "header": ".page-header__subtitle"
 }
