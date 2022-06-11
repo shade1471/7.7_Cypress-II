@@ -4,6 +4,7 @@ const hall = require("../fixtures/hall.json");
 const clientPage = require("../fixtures/clientPage.json");
 
 beforeEach(() => {
+  cy.viewport(Cypress.env("viewportWidth"), Cypress.env("viewportHeight"));
   cy.visit("/admin");
   cy.get(admPage.header).should("be.visible");
   cy.login(user.login, user.password);
@@ -11,7 +12,7 @@ beforeEach(() => {
 
 hall.forEach((hall) => {
   it(`Should order movie in '${hall.name}' hall`, () => {
-    // Проверка в админке доступности залов из fixtures
+    // Проверка в админке доступности зала из fixtures
     cy.get(admPage.hallControl).within(() => {
       cy.contains(hall.name).should("exist");
     });
@@ -21,7 +22,7 @@ hall.forEach((hall) => {
     cy.contains(`${hall.name}`).next().click("left");
     cy.get(clientPage.orderHeader).should("contain", `${hall.name}`);
     // Выбор ряда и мест
-    cy.selectSeats(4, 1, 2, 3);
+    cy.selectSeats(2, 1, 2, 3);
     cy.get(clientPage.orderButton).click();
     cy.contains("Вы выбрали билеты:").should("be.visible");
     //Окончательное бронирование:
