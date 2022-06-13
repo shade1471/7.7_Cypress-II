@@ -22,7 +22,7 @@ hall.forEach((hall) => {
     cy.contains(`${hall.name}`).next().click("left");
     cy.get(clientPage.orderHeader).should("contain", `${hall.name}`);
     // Выбор ряда и мест
-    cy.selectSeats(2, 1, 2, 3);
+    cy.selectSeats(1, 1, 2, 3);
     cy.get(clientPage.orderButton).click();
     cy.contains("Вы выбрали билеты:").should("be.visible");
     //Окончательное бронирование:
