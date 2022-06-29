@@ -1,6 +1,10 @@
-{
-  "login": "qamid@qamid.ru",
-  "password": "qamid",
-  "badLogin": "wrong@login.net",
-  "badPassword": "badPassword"
-}
+[
+  {"description": "valid", "data": 
+    {"login": "qamid@qamid.ru", "password": "qamid"}
+  }
+  ,
+  {"description": "not valid", "data": 
+    {"login": "wrong@login.net", "password": "badPassword"}
+  }
+]
+
