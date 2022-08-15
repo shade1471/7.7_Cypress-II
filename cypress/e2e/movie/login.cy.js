@@ -14,7 +14,7 @@ describe("Login to admin part of service", () => {
     it(`Should check auth for ${us.description} user`, () => {
       cy.login(us.data.login, us.data.password);
       if (us.description === "valid") {
-        admPage.getHallContol().should("be.visible");
+        admPage.getHallControl().should("be.visible");
       } else {
         cy.contains("Ошибка авторизации!").should("be.visible");
       }

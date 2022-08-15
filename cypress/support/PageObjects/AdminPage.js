@@ -11,7 +11,7 @@ class AdminPage {
     return cy.get(".login__button");
   }
 
-  getHallContol() {
+  getHallControl() {
     return cy.get("#hall-control");
   }
 
